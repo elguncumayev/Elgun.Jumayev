@@ -13,21 +13,21 @@ public class ArrayTask {
             num2=0;
 
             num1= (int) (Math.random()*(40+1)-20);
-            if(num1%2==1 || num1%2==-1){
+            /**if(num1%2==1 || num1%2==-1){
                 num1++;
-            }
-            arr[i]=num1;
+            }**/
+            arr[i]=num1+num1%2;
 
-            num2 = (int) (Math.random()*(60+1)-30);
-            if(num2%2==0){
-                if(num2==-20){
+            num2 = (int) (Math.random()*(57+1)-27);
+            /**if(num2%2==0){   29
+                if(num2==-30){
                     num2++;
                 }
                 else{
                     num2--;
                 }
-            }
-            arr2[i]=num2;
+            }**/
+            arr2[i]=num2+num2%2-1;
         }
         for (int i = 0; i < 30; i++) {
             System.out.print(arr[i]+" ");
