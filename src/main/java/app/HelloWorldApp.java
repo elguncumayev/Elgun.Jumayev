@@ -3,7 +3,17 @@ package app;
 public class HelloWorldApp {
 
   public static void main(String[] args) {
-    System.out.println("Hello World");
+    int num=1;
+    switch(num){
+      case 100:
+        System.out.println("100");
+        break;
+      case 10:
+         System.out.println(10);
+         break;
+         default:
+           throw new IllegalArgumentException();
+    }
   }
 
 }
