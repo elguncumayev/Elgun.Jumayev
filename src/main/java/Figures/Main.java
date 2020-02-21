@@ -59,7 +59,7 @@ public class Main {
     }
 
     for (Figure figure : list) {
-      System.out.printf("%.3f\n", figure.area());
+      System.out.printf("%s  %.3f\n",figure.getClass().toString() ,figure.area());
     }
   }
   public static Figure randomFigure(){
