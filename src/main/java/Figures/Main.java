@@ -58,9 +58,14 @@ public class Main {
       list.add(randomFigure());
     }
 
+    double totalSum = 0;
+    
+
     for (Figure figure : list) {
-      System.out.printf("%s  %.3f\n",figure.getClass().toString() ,figure.area());
+      System.out.printf("%s area is: %.3f\n",figure.getClass().toString() ,figure.area());
+      totalSum+= figure.area();
     }
+    System.out.printf("Total sum is: %.3f\n",totalSum);
   }
   public static Figure randomFigure(){
     switch ((int) (Math.random() * 3)){
