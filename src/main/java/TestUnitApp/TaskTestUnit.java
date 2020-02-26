@@ -10,6 +10,7 @@ public class TaskTestUnit implements Filterable {
       return null;
     }
     origin = origin.trim();
+    origin = origin.toLowerCase();
 
     StringBuilder result = new StringBuilder();
     for (int i = 0; i < origin.length(); i++) {
