@@ -23,14 +23,5 @@ public class NumOfLettersTask5 {
     for (char c : charOrder) {
       System.out.printf("Letter: %s, positions -> %d : %s\n", c, map.get(c).size(), map.get(c));
     }
-
-
-//    ArrayList<Character> characters = new ArrayList<>(map.keySet());
-//    Collections.sort(characters);
-//    int i = 0;
-//    for(char character : characters){
-//      System.out.printf("Letter: %s, positions -> %d : %s\n", characters.get(i),map.keySet().size(),map.get(characters.get(i)));
-//      i++;
-//    }
   }
 }
