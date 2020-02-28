@@ -17,7 +17,7 @@ public class NumOfLettersTask5 {
         charOrder.add(c);
       }
       List<Integer> positions = map.getOrDefault(c, new ArrayList<>());
-      positions.add(i);
+      positions.add(i+1);
       map.put(c, positions);
     });
     for (char c : charOrder) {
