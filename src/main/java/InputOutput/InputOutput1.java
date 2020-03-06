@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class InputOutput {
+public class InputOutput1 {
   private static List<String> read(String filename) throws FileNotFoundException {
     File file = new File(filename);
     BufferedReader br = new BufferedReader(new FileReader(file));
