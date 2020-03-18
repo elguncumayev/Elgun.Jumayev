@@ -19,7 +19,7 @@ public class Merge {
     int size2 = data2.length;
     int in1=0,in2=0;
     int[] result = new int[size1+size2];
-    for (int i = 0; i < size1 + size2 -1; i++) {
+    for (int i = 0; i < size1 + size2 - 1 ; i++) {
       if(data1[in1] > data2[in2]){
         result[i] = data2[in2];
         in2++;
@@ -29,6 +29,7 @@ public class Merge {
         in1++;
       }
     }
+    result[size1+size2-1] = Math.max(data1[size1-1], data2[size2-1]);
     return result;
   }
 }
