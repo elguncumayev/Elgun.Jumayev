@@ -1,0 +1,41 @@
+*********Written by teacher, method takes Optional booking from text and gives one united booking*************
+
+  public void bookFlight(int id, List<Passenger> passengers) {
+//    First one
+//    public void bookFlight(int id, List<Passenger> passengers) throws IOException {
+//      Booking booking = new Booking(id, passengers);
+//      daoBooking.saveChanges(booking);
+//      daoMain.saveChanges(daoMain.getById(id).orElse(new Flight("Nowhere", LocalDateTime.parse("0001-01-01T00:01"), 0, 0)));
+//    }
+
+
+    // new
+    Booking created = new Booking(id, passengers);
+    // existed, probably
+    Optional<Booking> was = daoBooking.getById(id);
+
+//    if (!was.isPresent()) {
+//      daoBooking.save(new_booking);
+//    } else {
+//      Booking bk_was = was.get();
+//      Booking bk2 = new_booking.union(bk_was);
+//      daoBooking.save(bk2);
+//    }
+//    Optional.of(created).flatMap(new_existed ->
+//            was.map(new Function<Booking, Booking>() {
+//                      @Override
+//                      public Booking apply(Booking probably) {
+//                        return new_existed.union(probably);
+//                      }
+//                    }
+//            )
+//    )
+//    .ifPresent(bbb -> daoBooking.save(created));
+
+    Optional.of(created).flatMap(new_existed -> was.map(new_existed::union))
+            .ifPresent(bbb -> daoBooking.save(created));
+    daoMain.save(daoMain.getById(id).orElseThrow(() -> new RuntimeException("Something went wrong: Services::bookFlight")));
+//    booking.union(was);
+//      daoBooking.save(booking);
+//      daoMain.save(daoMain.getById(id).orElse(new Flight("Nowhere", LocalDateTime.parse("0001-01-01T00:01"), 0, 0)));
+  }

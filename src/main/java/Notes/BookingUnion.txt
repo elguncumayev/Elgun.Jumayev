@@ -1,0 +1,8 @@
+*********Step project from removed code*************
+
+  public Booking union(Booking extra) {
+    // this + extra
+    ArrayList<Passenger> list = new ArrayList<>(this.passengerList);
+    list.addAll(extra.getPassengerList());
+    return new Booking(this.bookingID,this.flightID, list);
+  }

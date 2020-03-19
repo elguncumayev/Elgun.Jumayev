@@ -14,9 +14,7 @@ public class Brackets {
       else {
         brs.pop();
       }
-      if(brs.size() >= max){
-        max = brs.size();
-      }
+      max = Math.max(brs.size(), max);
     }
     return max;
   }
